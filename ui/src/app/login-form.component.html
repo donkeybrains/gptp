@@ -1,0 +1,5 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="nickname" placeholder="enter nickname">
+    <p *ngIf="controlInvalid('nickname')">Nickname invalid</p>
+    <button type="submit">Login</button>
+</form>
