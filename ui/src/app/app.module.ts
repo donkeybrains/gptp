@@ -12,6 +12,7 @@ import { HistoryPageComponent } from "./history-page/history-page.component";
 import { HistoryService } from "./history.service";
 
 import { Observable } from "rxjs/Observable";
+import { OnlineUserPageComponent } from './online-user-page/online-user-page.component';
 
 const routes: Routes = [
   { path: "", component: LoginPageComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
     AppComponent,
     LoginPageComponent,
     LoginFormComponent,
-    HistoryPageComponent
+    HistoryPageComponent,
+    OnlineUserPageComponent
   ],
   imports: [
     BrowserModule,
