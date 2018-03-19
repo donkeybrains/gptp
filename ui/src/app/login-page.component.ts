@@ -5,6 +5,7 @@ import { LoginService } from "./login.service";
   selector: "login-page",
   templateUrl: "login-page.component.html"
 })
+
 export class LoginPageComponent implements OnInit {
   constructor(private loginService: LoginService) {}
 

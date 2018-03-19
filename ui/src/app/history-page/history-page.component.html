@@ -1,0 +1,8 @@
+<div>
+  <h1>History</h1>
+    <ul>
+      <li *ngFor="let message of history | async">
+        {{message.from}} - {{message.msg}}
+      </li>
+    </ul>
+ </div>
