@@ -12,10 +12,6 @@ import "rxjs/add/operator/do";
 export class MembersOnlinePageComponent implements OnInit {
   members: Observable<Array<Member>>;
 
-  //todo fix this so dunamic
-  // initail member
-  nickname: string = "Zonk";
-
   constructor(private mon: MembersOnlineService) {}
 
   ngOnInit() {
@@ -23,6 +19,6 @@ export class MembersOnlinePageComponent implements OnInit {
   }
 
   setMemberName(member: string) {
-    this.nickname = member;
+    this.members = this.mon.getMemberFiltered(member);
   }
 }
