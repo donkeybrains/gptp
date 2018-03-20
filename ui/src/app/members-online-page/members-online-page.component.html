@@ -1,0 +1,8 @@
+<div>
+  <h1>Members Online</h1>
+    <ul>
+      <li *ngFor="let member of members | async">
+        {{member.nick}} - {{member.online}}
+      </li>
+    </ul>
+ </div>
