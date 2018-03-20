@@ -88,4 +88,48 @@ describe("MembersOnlineService", () => {
     expect(req.request.method).toBe("GET");
     req.flush(fullMembers);
   });
+
+  it("should return filtered members.", () => {
+
+    const fullMembers: MembersResponse = {
+      errors: null,
+      data: [
+      {
+        nick: "tom",
+        online: true
+      },
+      {
+        nick: "dick",
+        online: true
+      },
+      {
+        nick: "tom",
+        online: true
+      },
+      {
+        nick: "harry",
+        online: true
+      },
+      {
+        nick: "Captain Virgil Hilts",
+        online: true
+      }
+    ]
+  };
+
+    const expectedMembers: Array<Member> = [
+      {
+        nick: "Captain Virgil Hilts",
+        online: true
+      }
+    ];
+
+    service.getMemberFiltered("Captain Virgil Hilts").subscribe(members => {
+      expect(members).toEqual(expectedMembers);
+    });
+
+    const req = httpMock.expectOne("http://localhost:8888/users");
+    expect(req.request.method).toBe("GET");
+    req.flush(fullMembers);
+  });
 });
