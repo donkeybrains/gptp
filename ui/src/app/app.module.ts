@@ -15,6 +15,7 @@ import { MembersOnlineService } from "./members-online.service";
 import { Observable } from "rxjs/Observable";
 import { OnlineUserPageComponent } from "./online-user-page/online-user-page.component";
 import { MembersOnlinePageComponent } from "./members-online-page/members-online-page.component";
+import { TestPageComponent } from './test-page/test-page.component';
 
 const routes: Routes = [
   { path: "", component: LoginPageComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     LoginFormComponent,
     HistoryPageComponent,
     OnlineUserPageComponent,
-    MembersOnlinePageComponent
+    MembersOnlinePageComponent,
+    TestPageComponent
   ],
   imports: [
     BrowserModule,
