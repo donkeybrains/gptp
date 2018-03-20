@@ -10,13 +10,16 @@ import { LoginFormComponent } from "./login-form.component";
 import { LoginService } from "./login.service";
 import { HistoryPageComponent } from "./history-page/history-page.component";
 import { HistoryService } from "./history.service";
+import { MembersOnlineService } from "./members-online.service";
 
 import { Observable } from "rxjs/Observable";
-import { OnlineUserPageComponent } from './online-user-page/online-user-page.component';
+import { OnlineUserPageComponent } from "./online-user-page/online-user-page.component";
+import { MembersOnlinePageComponent } from "./members-online-page/members-online-page.component";
 
 const routes: Routes = [
   { path: "", component: LoginPageComponent },
-  { path: "history", component: HistoryPageComponent }
+  { path: "history", component: HistoryPageComponent },
+  { path: "users", component: MembersOnlinePageComponent }
 ];
 
 @NgModule({
@@ -25,7 +28,8 @@ const routes: Routes = [
     LoginPageComponent,
     LoginFormComponent,
     HistoryPageComponent,
-    OnlineUserPageComponent
+    OnlineUserPageComponent,
+    MembersOnlinePageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService, HistoryService],
+  providers: [LoginService, HistoryService, MembersOnlineService],
   bootstrap: [AppComponent]
 })
 export class AppModule implements OnInit {
